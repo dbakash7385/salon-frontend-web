@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/png/stryn-logo.png";
 import AuthModal from "./auth/AuthModal";
 
@@ -50,14 +51,14 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item px-3">
-              <a className="nav-link nav-link-custom" href="#">
+              <Link className="nav-link nav-link-custom" to="/about-us">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item px-3">
-              <a className="nav-link nav-link-custom" href="#">
+              <Link className="nav-link nav-link-custom" to="/contact-us">
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
 

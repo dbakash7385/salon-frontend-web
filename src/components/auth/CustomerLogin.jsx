@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CustomerLogin = ({ onNavigate }) => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   // Form State
@@ -69,6 +71,7 @@ const CustomerLogin = ({ onNavigate }) => {
 
     if (Object.keys(newErrors).length === 0) {
       console.log("Senior Developer: Login valid", formData);
+      navigate("/customer/home");
     }
   };
   return (

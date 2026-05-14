@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CustomerResetPassword = ({ onNavigate }) => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -56,7 +58,7 @@ const CustomerResetPassword = ({ onNavigate }) => {
 
     if (Object.keys(newErrors).length === 0) {
       console.log("Senior Developer: Password reset successful", formData);
-      onNavigate("CUSTOMER_LOGIN");
+      navigate("/customer/home");
     }
   };
 

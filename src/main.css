@@ -267,6 +267,15 @@ body {
   font-weight: 500;
   line-height: normal;
 }
+.text-16-500-inter {
+  color: #f2f2f2;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+
 .text-84-700 {
   color: #fff;
   text-align: center;
@@ -773,6 +782,16 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.stat-label-lower {
+  color: #999;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+
 .stat-label {
   color: #a1a1a1;
   font-family: Poppins;
@@ -1190,19 +1209,19 @@ body {
 
 /* Customer Login/Signup specific styles */
 .badge-customer {
-display: inline-flex;
-padding: 7.794px 11.295px 8.175px 10.993px;
-justify-content: center;
-align-items: center;
-border-radius: 42770700px;
-background: rgba(255, 178, 152, 0.20);
-color: #FFB298;
-text-align: center;
-font-family: Inter;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px; /* 142.857% */
+  display: inline-flex;
+  padding: 7.794px 11.295px 8.175px 10.993px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 42770700px;
+  background: rgba(255, 178, 152, 0.2);
+  color: #ffb298;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
 }
 
 .auth-form {
@@ -1393,4 +1412,203 @@ line-height: 20px; /* 142.857% */
   outline: none;
   border-color: #ffb298;
   background-color: #222222;
+}
+
+/* Customer UI Utilities */
+.bg-dark-soft {
+  background-color: #1a1a1a !important;
+}
+
+.border-1-white-10 {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.user-profile-pill {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.user-profile-pill:hover {
+  background-color: #222 !important;
+  border-color: rgba(255, 178, 152, 0.3);
+}
+
+.text-14-400-subtext {
+  color: #999;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+.get-in-text {
+  color: #f2f2f2;
+  text-align: center;
+  font-family: "Playfair Display";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px; /* 100% */
+}
+
+/* Contact Us Page Styles */
+.contact-hero {
+  height: 450px;
+  background-image: url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=2000");
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.text-peach-script {
+  color: #ffb298;
+  font-family: "Playfair Display";
+  font-size: 60px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 60px;
+}
+
+.contact-icon-box {
+  width: 44px;
+  height: 44px;
+  background-color: #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 178, 152, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bg-black-dark {
+  background-color: #0c0c0c !important;
+}
+
+.z-index-1 {
+  z-index: 1 !important;
+}
+.text-18-400 {
+  color: var(--Neutral-300, #f0f0f0);
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+}
+.text-30-700 {
+  color: #f2f2f2;
+  font-family: "Playfair Display";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 120% */
+}
+.form-control-custom-contact {
+  display: flex;
+  padding: 11.5px 31.91px 11.5px 13px;
+  align-items: center;
+  align-self: stretch;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  justify-self: stretch;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #2e2e2e;
+  color: #999;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* About Us Page Styles */
+.about-hero {
+  height: 450px;
+  background-image: url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=2000");
+  background-size: cover;
+  background-position: center;
+}
+
+.stats-section {
+  background-color: #161616;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-number {
+  color: #ffb298;
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  color: #888;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.value-card {
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 178, 152, 0.3);
+}
+
+.success-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 178, 152, 0.1);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 178, 152, 0.2);
+}
+.animate-fade-in {
+  animation: modalFadeIn 0.4s ease-out;
+}
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.text-36-700 {
+  color: #f2f2f2;
+  text-align: center;
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 111.111% */
+}
+.text-20-600{
+  color: #F2F2F2;
+font-family: "Playfair Display";
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px; /* 140% */
 }

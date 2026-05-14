@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CustomerSignup = ({ onNavigate }) => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -88,7 +90,7 @@ const CustomerSignup = ({ onNavigate }) => {
 
     if (Object.keys(newErrors).length === 0) {
       console.log("Senior Developer: Form is valid. Proceeding with signup...", formData);
-      // Integration with API would go here
+      navigate("/customer/home");
     }
   };
   return (
