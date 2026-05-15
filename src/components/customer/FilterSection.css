@@ -1,0 +1,228 @@
+.filter-section-container {
+  background: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.filter-label {
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Category Styles */
+.category-scroll-wrapper {
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.category-scroll-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
+.category-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.category-list {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 110px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.category-item:hover {
+  background: #222;
+  border-color: rgba(255, 178, 152, 0.3);
+}
+
+.category-item.active {
+  background: #ffb298;
+  color: #121212;
+  border-color: #ffb298;
+}
+
+.category-icon {
+  opacity: 0.8;
+}
+
+.category-item span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Price Range Styles */
+.price-display {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.custom-range {
+  accent-color: #ffb298;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+  background: #2a2a2a;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.custom-range::-webkit-slider-thumb {
+  background: #ffb298;
+  border: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -6px;
+}
+
+.price-control {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.price-control:focus {
+  outline: none;
+  border-color: #ffb298;
+}
+
+/* Rating Styles */
+.rating-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rating-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #ffffff;
+  text-align: left;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.rating-item:hover {
+  background: #222;
+}
+
+.rating-item.active {
+  background: #ffb298;
+  color: #121212;
+  border-color: #ffb298;
+}
+
+.star-icon {
+  color: #ffb298;
+}
+
+.rating-item.active .star-icon {
+  color: #121212;
+}
+
+/* Availability Styles */
+.availability-card {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.availability-card:hover {
+  border-color: rgba(255, 178, 152, 0.3);
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.custom-checkbox.checked {
+  border-color: #ffb298;
+  background: #ffb298;
+}
+
+.check-inner {
+  width: 10px;
+  height: 10px;
+  background: #121212;
+  border-radius: 2px;
+}
+
+.availability-text {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.availability-subtext {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+  margin-top: 8px;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeInDown 0.4s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .filter-section-container {
+    padding: 16px;
+  }
+  .category-item {
+    min-width: 90px;
+    padding: 12px;
+  }
+}
