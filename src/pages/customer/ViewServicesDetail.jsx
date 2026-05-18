@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import CustomerNavbar from "../../components/customer/CustomerNavbar";
 import Footer from "../../components/Footer";
 import ServiceCard from "../../components/customer/ServiceCard";
@@ -13,7 +14,8 @@ import barberImg from "../../assets/images/png/barber-service.jpg";
 import facialImg from "../../assets/images/png/facial-service.jpg";
 import spaImg from "../../assets/images/png/spa-service.jpg";
 
-const CustomerHome = () => {
+const ViewServicesDetail = () => {
+  const location = useLocation();
   const [showFilters, setShowFilters] = React.useState(false);
   const [isBookingOpen, setIsBookingOpen] = React.useState(false);
   const [selectedService, setSelectedService] = React.useState(null);
@@ -23,9 +25,34 @@ const CustomerHome = () => {
     setIsBookingOpen(true);
   };
 
+  const salonName = location.state?.salonName || "Elite Hair Studio";
+  const category = location.state?.category || "beauty and wellness";
+
+  // Splits the salon name and renders the last word in peach color for premium style
+  const renderSalonName = (name) => {
+    const words = name.split(" ");
+    if (words.length <= 1) {
+      return <span>{name}</span>;
+    }
+    const lastWord = words.pop();
+    const remainingText = words.join(" ");
+    return (
+      <>
+        {remainingText} <span className="text-peach">{lastWord}</span>
+      </>
+    );
+  };
+
+  const getSubheadingText = () => {
+    if (salonName === "Elite Hair Studio") {
+      return "Browse and book from 12 premium Luxury Haircut & Styling services";
+    }
+    return `Browse and book from 12 premium ${category === "beauty and wellness" ? "beauty and wellness" : `${category}`} services`;
+  };
+
   const services = [
     {
-      image: hairImg, 
+      image: hairImg,
       category: "Haircuts",
       title: "Luxury Haircut & Styling",
       salon: "Elite Hair Studio",
@@ -118,10 +145,10 @@ const CustomerHome = () => {
       <section className="pt-5 pb-4">
         <div className="container text-start">
           <div className="text-48-500 mb-2">
-            Discover <span className="text-peach">Services</span>
+            {renderSalonName(salonName)}
           </div>
           <p className="text-start text-20-400">
-            Browse and book from 12 premium beauty and wellness services
+            {getSubheadingText()}
           </p>
         </div>
       </section>
@@ -341,4 +368,4 @@ const CustomerHome = () => {
   );
 };
 
-export default CustomerHome;
+export default ViewServicesDetail;

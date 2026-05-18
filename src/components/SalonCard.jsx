@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SalonCard = ({ image, category, title, rating, location, reviews }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="salon-card h-100 flex-column d-flex">
       <div className="salon-card-img-wrapper">
@@ -18,7 +21,12 @@ const SalonCard = ({ image, category, title, rating, location, reviews }) => {
           </div>
         </div>
         <p className="salon-card-subtitle mb-4 flex-grow-1">{location} • {reviews} reviews</p>
-        <button className="salon-card-btn mt-auto">View Services</button>
+        <button 
+          className="salon-card-btn mt-auto"
+          onClick={() => navigate('/customer/services-detail', { state: { salonName: title, category } })}
+        >
+          View Services
+        </button>
       </div>
     </div>
   );

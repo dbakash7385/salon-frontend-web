@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import CustomerNavbar from "../../components/customer/CustomerNavbar";
 import Footer from "../../components/Footer";
+import BookingDetailsModal from "../../components/customer/BookingDetailsModal";
+import RescheduleModal from "../../components/customer/RescheduleModal";
+import ConfirmationModal from "../../components/common/ConfirmationModal";
 import {
   Calendar,
   Clock,
@@ -28,6 +31,9 @@ const BookingCard = ({
   price,
   status,
   isHistory = false,
+  onViewDetails,
+  onReschedule,
+  onCancel,
 }) => {
   const isCancelled = status === "Cancelled";
   const isCompleted = status === "Completed";
@@ -138,18 +144,27 @@ const BookingCard = ({
           </div>
 
           <div className="acc-card-footer pt-3 d-flex flex-wrap gap-2 border-top-white-10">
-            <button className="acc-action-btn outline d-flex align-items-center gap-2">
+            <button
+              onClick={onViewDetails}
+              className="acc-action-btn outline d-flex align-items-center gap-2"
+            >
               <Eye size={16} />
               <span>View Details</span>
             </button>
 
             {!isHistory ? (
               <>
-                <button className="acc-action-btn reschedule d-flex align-items-center gap-2">
+                <button
+                  onClick={onReschedule}
+                  className="acc-action-btn reschedule d-flex align-items-center gap-2"
+                >
                   <SquarePen color="#ffb298" size={16} />
                   <span>Reschedule</span>
                 </button>
-                <button className="acc-action-btn cancel d-flex align-items-center gap-2">
+                <button 
+                  onClick={onCancel}
+                  className="acc-action-btn cancel d-flex align-items-center gap-2"
+                >
                   <XCircle color="#ff5e5e" size={16} />
                   <span style={{ color: "#ff5e5e" }}>Cancel</span>
                 </button>
@@ -171,7 +186,7 @@ const ProfileView = () => {
   return (
     <div className="prof-info-card">
       <h2 className="prof-section-title">Profile Information</h2>
-      
+
       <div className="prof-input-wrapper">
         <label className="prof-label">Account Type</label>
         <div className="prof-readonly-field">
@@ -195,7 +210,10 @@ const ProfileView = () => {
       </div>
 
       <p className="prof-footer-note">
-        Want to update your profile? Contact support at <span style={{color: 'rgba(255,255,255,0.6)'}}>support@glowbook.com</span>
+        Want to update your profile? Contact support at{" "}
+        <span style={{ color: "rgba(255,255,255,0.6)" }}>
+          support@glowbook.com
+        </span>
       </p>
     </div>
   );
@@ -203,8 +221,34 @@ const ProfileView = () => {
 
 const CustomerAccount = () => {
   const [activeTab, setActiveTab] = useState("bookings");
+  const [selectedBooking, setSelectedBooking] = useState(null);
+  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
 
-  const bookings = [
+  // Reschedule modal states
+  const [isReschedModalOpen, setIsReschedModalOpen] = useState(false);
+  const [selectedBookingForResched, setSelectedBookingForResched] =
+    useState(null);
+
+  // Cancel modal states
+  const [isCancelModalOpen, setIsCancelModalOpen] = useState(false);
+  const [selectedBookingForCancel, setSelectedBookingForCancel] = useState(null);
+
+  const handleViewDetails = (booking) => {
+    setSelectedBooking(booking);
+    setIsDetailsModalOpen(true);
+  };
+
+  const handleReschedule = (booking) => {
+    setSelectedBookingForResched(booking);
+    setIsReschedModalOpen(true);
+  };
+
+  const handleCancelClick = (booking) => {
+    setSelectedBookingForCancel(booking);
+    setIsCancelModalOpen(true);
+  };
+
+  const initialBookings = [
     {
       image: hairImg,
       title: "Luxury Haircut & Styling",
@@ -215,6 +259,12 @@ const CustomerAccount = () => {
       duration: "60 min",
       price: 85,
       status: "Upcoming",
+      bookingId: "1776147080523",
+      bookedOn: "Apr 14, 2026, 11:41 AM",
+      customerName: "John",
+      customerPhone: "+919638527410",
+      customerEmail: "johndoe@example.com",
+      fullDate: "Wednesday, April 15, 2026",
     },
     {
       image: massageImg,
@@ -226,10 +276,56 @@ const CustomerAccount = () => {
       duration: "90 min",
       price: 120,
       status: "Upcoming",
+      bookingId: "1776147080524",
+      bookedOn: "Apr 14, 2026, 11:41 AM",
+      customerName: "John",
+      customerPhone: "+919638527410",
+      customerEmail: "johndoe@example.com",
+      fullDate: "Saturday, April 18, 2026",
     },
   ];
 
-  const history = [
+  const [bookings, setBookings] = useState(initialBookings);
+
+  const handleConfirmReschedule = (newDate, newTime) => {
+    setBookings((prevBookings) =>
+      prevBookings.map((b) =>
+        b.bookingId === selectedBookingForResched.bookingId
+          ? {
+              ...b,
+              date: newDate,
+              time: newTime,
+              fullDate: newDate,
+            }
+          : b,
+      ),
+    );
+  };
+
+  const handleConfirmCancel = () => {
+    if (selectedBookingForCancel) {
+      const bookingToCancel = bookings.find(
+        (b) => b.bookingId === selectedBookingForCancel.bookingId
+      );
+      if (bookingToCancel) {
+        // Create updated booking with status 'Cancelled'
+        const updatedBooking = {
+          ...bookingToCancel,
+          status: "Cancelled",
+        };
+        
+        // Remove from bookings list
+        setBookings((prevBookings) =>
+          prevBookings.filter((b) => b.bookingId !== selectedBookingForCancel.bookingId)
+        );
+        
+        // Add to history list
+        setHistory((prevHistory) => [updatedBooking, ...prevHistory]);
+      }
+    }
+  };
+
+  const initialHistory = [
     {
       image: hairImg,
       title: "Luxury Haircut & Styling",
@@ -240,6 +336,12 @@ const CustomerAccount = () => {
       duration: "60 min",
       price: 85,
       status: "Cancelled",
+      bookingId: "1776147080523",
+      bookedOn: "Apr 14, 2026, 11:41 AM",
+      customerName: "John",
+      customerPhone: "+919638527410",
+      customerEmail: "johndoe@example.com",
+      fullDate: "Wednesday, April 15, 2026",
     },
     {
       image: massageImg,
@@ -251,6 +353,12 @@ const CustomerAccount = () => {
       duration: "90 min",
       price: 120,
       status: "Completed",
+      bookingId: "1776147080525",
+      bookedOn: "Mar 8, 2026, 09:15 AM",
+      customerName: "John",
+      customerPhone: "+919638527410",
+      customerEmail: "johndoe@example.com",
+      fullDate: "Monday, March 10, 2026",
     },
     {
       image: hairImg,
@@ -262,8 +370,16 @@ const CustomerAccount = () => {
       duration: "30 min",
       price: 45,
       status: "Completed",
+      bookingId: "1776147080526",
+      bookedOn: "Feb 18, 2026, 04:30 PM",
+      customerName: "John",
+      customerPhone: "+919638527410",
+      customerEmail: "johndoe@example.com",
+      fullDate: "Friday, February 20, 2026",
     },
   ];
+
+  const [history, setHistory] = useState(initialHistory);
 
   return (
     <div className="acc-page-wrapper bg-black-dark min-vh-100">
@@ -313,7 +429,13 @@ const CustomerAccount = () => {
           {activeTab === "bookings" && (
             <div className="bookings-view">
               {bookings.map((booking, index) => (
-                <BookingCard key={index} {...booking} />
+                <BookingCard
+                  key={index}
+                  {...booking}
+                  onViewDetails={() => handleViewDetails(booking)}
+                  onReschedule={() => handleReschedule(booking)}
+                  onCancel={() => handleCancelClick(booking)}
+                />
               ))}
             </div>
           )}
@@ -321,7 +443,13 @@ const CustomerAccount = () => {
           {activeTab === "history" && (
             <div className="history-view">
               {history.map((item, index) => (
-                <BookingCard key={index} {...item} isHistory={true} />
+                <BookingCard
+                  key={index}
+                  {...item}
+                  isHistory={true}
+                  onViewDetails={() => handleViewDetails(item)}
+                  onReschedule={() => handleReschedule(item)}
+                />
               ))}
             </div>
           )}
@@ -331,6 +459,33 @@ const CustomerAccount = () => {
       </div>
 
       <Footer />
+
+      <BookingDetailsModal
+        isOpen={isDetailsModalOpen}
+        onClose={() => setIsDetailsModalOpen(false)}
+        booking={selectedBooking}
+      />
+
+      <RescheduleModal
+        isOpen={isReschedModalOpen}
+        onClose={() => setIsReschedModalOpen(false)}
+        booking={selectedBookingForResched}
+        onConfirm={handleConfirmReschedule}
+      />
+
+      <ConfirmationModal
+        isOpen={isCancelModalOpen}
+        onClose={() => setIsCancelModalOpen(false)}
+        onConfirm={handleConfirmCancel}
+        title="Cancel Booking?"
+        message="Are you sure you want to cancel this appointment? This action cannot be undone."
+        confirmText="Yes, Cancel"
+        cancelText="Keep Booking"
+        confirmBtnType="danger"
+        successTitle="Cancelled Successfully!"
+        successMessage="Your appointment has been cancelled."
+        showSuccess={true}
+      />
     </div>
   );
 };

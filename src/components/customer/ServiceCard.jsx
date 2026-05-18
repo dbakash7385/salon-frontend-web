@@ -13,6 +13,7 @@ const ServiceCard = ({
   reviewCount,
   duration,
   price,
+  onBookClick,
 }) => {
   return (
     <div className="service-card bg-dark-card rounded-4 overflow-hidden  border-1-white-10 transition-300">
@@ -41,7 +42,9 @@ const ServiceCard = ({
 
       <div className="p-4 d-flex flex-column h-100">
         <div className="flex-grow-1">
-          <h5 className="text-white text-20-500 mb-1 truncate-single">{title}</h5>
+          <h5 className="text-white text-20-500 mb-1 truncate-single">
+            {title}
+          </h5>
           <p className="text-14-400 mb-2 truncate-single">{salon}</p>
 
           <div className="d-flex align-items-center gap-2  mb-3">
@@ -132,78 +135,16 @@ const ServiceCard = ({
               <p className=" text-12-400 mb-0">Starting from</p>
               <h4 className="text-peach mb-0 font-bold">${price}</h4>
             </div>
-            <button className="partner-btn d-flex align-items-center gap-2">
+            <button
+              onClick={onBookClick}
+              className="partner-btn d-flex align-items-center gap-2"
+            >
               <Calendar size={18} />
               <span>Book</span>
             </button>
           </div>
         </div>
       </div>
-
-      <style jsx="true">{`
-        .bg-dark-card {
-          background: #141414;
-        }
-        .badge-glass {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .badge-available {
-          background: rgba(39, 174, 96, 0.2);
-          border: 1px solid rgba(39, 174, 96, 0.3);
-          color: #2ecc71;
-        }
-        .dot-green {
-          width: 8px;
-          height: 8px;
-          background-color: #2ecc71;
-          border-radius: 50%;
-          display: inline-block;
-          box-shadow: 0 0 8px #2ecc71;
-        }
-        .description-text {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-          line-height: 1.5;
-        }
-        .truncate-single {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-        .border-top-white-10 {
-          border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .btn-book {
-          background: #ffb298;
-          color: #121212;
-          border: none;
-          padding: 8px 24px;
-          border-radius: 12px;
-          font-weight: 600;
-          transition: all 0.3s ease;
-        }
-        .btn-book:hover {
-          background: #ffa07a;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(255, 178, 152, 0.3);
-        }
-        .service-card:hover {
-          transform: translateY(-8px);
-          border-color: rgba(255, 178, 152, 0.4) !important;
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-        }
-        .transition-300 {
-          transition: all 0.3s ease;
-        }
-        .text-peach {
-          color: #ffb298;
-        }
-      `}</style>
     </div>
   );
 };

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { User, Calendar, LogOut } from "lucide-react";
 import logo from "../../assets/images/png/stryn-logo.png";
 
 const CustomerNavbar = () => {
+  const navigate = useNavigate()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
@@ -106,7 +107,7 @@ const CustomerNavbar = () => {
                   </Link>
                 </div>
 
-                <div className="unq-dropdown-footer py-1">
+                <div className="unq-dropdown-footer py-1" onClick={()=>navigate("/")}>
                   <button className="unq-dropdown-item unq-logout-item">
                     <LogOut size={18} />
                     <span>Logout</span>

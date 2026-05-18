@@ -5,6 +5,7 @@ import CustomerHome from './pages/customer/Home'
 import ContactUs from './components/ContactUs'
 import AboutUs from './components/AboutUs'
 import CustomerAccount from './pages/customer/Account'
+import ViewServicesDetail from './pages/customer/ViewServicesDetail'
 
 // Placeholder for Partner Dashboard
 const PartnerDashboard = () => (
@@ -29,6 +30,7 @@ function App() {
         {/* Customer Routes */}
         <Route path="/customer/home" element={<CustomerHome />} />
         <Route path="/customer/account" element={<CustomerAccount />} />
+        <Route path="/customer/services-detail" element={<ViewServicesDetail />} />
 
         {/* Partner Routes */}
         <Route path="/partner/dashboard" element={<PartnerDashboard />} />

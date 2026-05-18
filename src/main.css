@@ -1986,3 +1986,1114 @@ body {
   font-size: 14px;
   margin-top: 24px;
 }
+
+/* Booking Details Modal Styles */
+.details-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1100; /* Over everything */
+}
+
+.details-modal-container {
+  background-color: #121212;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.details-modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.details-modal-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.details-modal-hero {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.details-modal-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details-modal-hero-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  background: linear-gradient(to top, #121212, transparent);
+  pointer-events: none;
+}
+
+.details-modal-status-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 50px;
+  color: #ffffff;
+}
+
+.details-modal-status-badge.upcoming {
+  background: #00c950;
+}
+
+.details-modal-status-badge.completed {
+  background: #2ecc71;
+}
+
+.details-modal-status-badge.cancelled {
+  background: #ff5e5e;
+}
+
+.details-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #333 #121212;
+}
+
+.details-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.details-modal-body::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+.details-modal-body::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+.details-modal-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+
+.details-modal-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+}
+
+.details-info-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+.details-card-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.2px;
+}
+
+.details-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  /* border-radius: 50%; */
+  /* background-color: rgba(255, 255, 255, 0.02); */
+  /* border: 1px solid rgba(255, 255, 255, 0.05); */
+  flex-shrink: 0;
+}
+
+.details-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  margin-bottom: 2px;
+}
+
+.details-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.details-label-summary {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+.details-value-summary {
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.details-summary-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.06);
+  width: 100%;
+}
+
+.details-label-total {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.details-value-total {
+  color: #ffb298;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.details-meta-section {
+  margin: 24px 0;
+}
+
+.details-meta-item {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 20px;
+}
+
+.details-modal-footer {
+  width: 100%;
+}
+
+.details-btn-close {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1.275px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.details-btn-close:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.details-btn-download {
+  background-color: #ffb298;
+  color: #121212;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.details-btn-download:hover {
+  background-color: #ffa07a;
+}
+
+/* Reschedule Modal Styles */
+.resched-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1100; /* Over everything */
+}
+
+.resched-modal-container {
+  background-color: #121212;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.resched-modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.resched-modal-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.resched-modal-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+
+.resched-modal-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+}
+
+.resched-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #333 #121212;
+}
+
+.resched-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.resched-modal-body::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+.resched-modal-body::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+.resched-current-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+.resched-current-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.resched-section-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+.resched-carousel-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.resched-nav-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resched-nav-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.resched-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.resched-date-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.resched-date-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #ffffff;
+}
+
+.resched-date-card:hover:not(.selected) {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 178, 152, 0.4);
+}
+
+.resched-date-card.selected {
+  background-color: #ffb298 !important;
+  border-color: #ffb298 !important;
+  color: #121212 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 178, 152, 0.2);
+}
+
+.resched-date-day {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.resched-date-card.selected .resched-date-day {
+  color: rgba(18, 18, 18, 0.7) !important;
+}
+
+.resched-date-number {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.resched-date-today-label {
+  font-size: 10px;
+  color: #ffb298;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.resched-date-card.selected .resched-date-today-label {
+  color: #121212 !important;
+}
+
+.resched-time-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.resched-time-slot-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 12px 8px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.resched-time-slot-btn svg {
+  color: #ffb298;
+  transition: color 0.2s;
+}
+
+.resched-time-slot-btn:hover:not(.disabled):not(.selected) {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 178, 152, 0.4);
+}
+
+.resched-time-slot-btn.selected {
+  background-color: #ffb298 !important;
+  border-color: #ffb298 !important;
+  color: #121212 !important;
+  box-shadow: 0 4px 12px rgba(255, 178, 152, 0.15);
+}
+
+.resched-time-slot-btn.selected svg {
+  color: #121212 !important;
+}
+
+.resched-time-slot-btn.disabled {
+  opacity: 0.25;
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.03) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  cursor: not-allowed;
+}
+
+.resched-time-slot-btn.disabled svg {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.resched-btn-cancel {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1.275px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.resched-btn-cancel:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.resched-btn-confirm {
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.resched-btn-confirm.disabled {
+  background-color: rgba(255, 178, 152, 0.2) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  border: none;
+  cursor: not-allowed;
+}
+
+.resched-btn-confirm.enabled {
+  background-color: #ffb298 !important;
+  color: #121212 !important;
+  border: none;
+}
+
+.resched-btn-confirm.enabled:hover {
+  background-color: #ffa07a !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(255, 178, 152, 0.3);
+}
+
+@media (max-width: 768px) {
+  .resched-modal-container {
+    max-height: 95vh;
+  }
+  
+  .resched-date-grid {
+    gap: 6px;
+  }
+  
+  .resched-date-card {
+    padding: 10px 4px;
+  }
+  
+  .resched-date-number {
+    font-size: 16px;
+  }
+  
+  .resched-date-day {
+    font-size: 10px;
+  }
+  
+  .resched-time-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .resched-time-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .resched-modal-footer {
+    flex-direction: column-reverse;
+    gap: 10px !important;
+  }
+  
+  .resched-btn-cancel,
+  .resched-btn-confirm {
+    width: 100% !important;
+  }
+}
+
+/* Resched Success State Styles */
+.resched-modal-container.success-state {
+  max-width: 550px;
+  padding: 48px 32px !important;
+}
+
+.resched-success-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(0, 201, 80, 0.1);
+  border: 1.5px solid rgba(0, 201, 80, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scalePop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes scalePop {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.resched-success-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+
+.resched-success-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.resched-success-details-box {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 12px 24px;
+}
+
+/* Common Reusable Confirmation Modal Styles */
+.common-confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1100; /* Over everything */
+}
+
+.common-confirm-container {
+  background-color: #121212;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 480px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.common-confirm-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.common-confirm-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.common-confirm-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+.common-confirm-message {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.common-confirm-btn-cancel {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1.275px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.common-confirm-btn-cancel:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.common-confirm-btn-confirm {
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.common-confirm-btn-confirm.danger {
+  background-color: #ff3b30 !important;
+  color: #ffffff !important;
+}
+
+.common-confirm-btn-confirm.danger:hover {
+  background-color: #e02d24 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(255, 59, 48, 0.3);
+}
+
+.common-confirm-btn-confirm.peach {
+  background-color: #ffb298 !important;
+  color: #121212 !important;
+}
+
+.common-confirm-btn-confirm.peach:hover {
+  background-color: #ffa07a !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(255, 178, 152, 0.3);
+}
+
+.common-confirm-btn-confirm.primary {
+  background-color: #ffb298 !important;
+  color: #121212 !important;
+}
+
+.common-confirm-btn-confirm.primary:hover {
+  background-color: #ffa07a !important;
+  transform: translateY(-1px);
+}
+
+/* Common Confirm Success Specific Styles */
+.common-confirm-container.success-state {
+  max-width: 480px;
+  padding: 48px 32px !important;
+}
+
+.common-confirm-success-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(0, 201, 80, 0.1);
+  border: 1.5px solid rgba(0, 201, 80, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scalePop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.common-confirm-success-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: -0.5px;
+  margin-top: 16px;
+}
+
+.common-confirm-success-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+}
+
+
+  .bg-dark-card {
+    background: #141414;
+  }
+  .badge-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .badge-available {
+    background: rgba(39, 174, 96, 0.2);
+    border: 1px solid rgba(39, 174, 96, 0.3);
+    color: #2ecc71;
+  }
+  .dot-green {
+    width: 8px;
+    height: 8px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #2ecc71;
+  }
+  .description-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
+  }
+  .truncate-single {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .border-top-white-10 {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .btn-book {
+    background: #ffb298;
+    color: #121212;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-book:hover {
+    background: #ffa07a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 178, 152, 0.3);
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 178, 152, 0.4) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  }
+  .transition-300 {
+    transition: all 0.3s ease;
+  }
+  .text-peach {
+    color: #ffb298;
+  }
+
+  /* Service Booking Modal Styling */
+  .badge-availables {
+    background: rgba(39, 174, 96, 0.2) !important;
+    border: 1px solid rgba(39, 174, 96, 0.3) !important;
+    color: #2ecc71 !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .dot-greens {
+    width: 8px;
+    height: 8px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #2ecc71;
+  }
+
+  .srv-inclusion-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-sizing: border-box;
+  }
+
+  .srv-inclusion-check {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(255, 178, 152, 0.1);
+    border: 1px solid rgba(255, 178, 152, 0.15);
+  }
+
+  .srv-price-breakdown-box {
+    background-color: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .srv-date-slider-container {
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE and Edge */
+  }
+  .srv-date-slider-container::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, Opera */
+  }
+
+  .srv-date-nav-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+  }
+
+  .srv-date-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    transform: scale(1.05);
+  }
+
+  .srv-date-pill-btn {
+    flex: 0 0 auto;
+    width: 80px;
+    height: 96px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1.2px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+  }
+
+  .srv-date-pill-btn .day {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .srv-date-pill-btn .date {
+    color: #ffffff;
+  }
+
+  .srv-date-pill-btn .lbl {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .srv-date-pill-btn.active {
+    background-color: #ffb298 !important;
+    border-color: #ffb298 !important;
+    box-shadow: 0 8px 24px rgba(255, 178, 152, 0.25);
+  }
+
+  .srv-date-pill-btn.active .day {
+    color: rgba(18, 18, 18, 0.8) !important;
+  }
+
+  .srv-date-pill-btn.active .date {
+    color: #121212 !important;
+  }
+
+  .srv-date-pill-btn.active .lbl {
+    color: #121212 !important;
+    font-weight: 700 !important;
+  }
+
+  .srv-times-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 12px;
+  }
+
+  .srv-time-slot-btn {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .srv-time-slot-btn.disabled {
+    opacity: 0.2;
+    cursor: not-allowed !important;
+    background-color: rgba(255, 255, 255, 0.01) !important;
+    border-color: rgba(255, 255, 255, 0.04) !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  .srv-time-slot-btn.selected {
+    background-color: #ffb298 !important;
+    border-color: #ffb298 !important;
+    color: #121212 !important;
+  }
+
+  /* Stepper Progress Bar Styling */
+  .stepper-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stepper-steps-wrapper {
+    margin-top: 16px;
+  }
+
+  .step-item {
+    flex-shrink: 0;
+  }
+
+  .step-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .step-circle.active {
+    border-color: #ffb298;
+    color: #ffb298;
+    background-color: rgba(255, 178, 152, 0.05);
+  }
+
+  .step-circle.completed {
+    border-color: #27ae60;
+    background-color: rgba(39, 174, 96, 0.1);
+    color: #2ecc71;
+  }
+
+  .step-label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+
+  .step-label.active {
+    color: #ffffff;
+  }
+
+  .step-line {
+    flex-grow: 1;
+    height: 1.5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 8px;
+    min-width: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .step-line.active {
+    background-color: #ffb298;
+  }
+
+  /* Form Inputs (Step 2) */
+  .stepper-input-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .stepper-input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    padding: 16px 20px 16px 48px !important;
+    border-radius: 14px !important;
+    font-size: 15px !important;
+    outline: none !important;
+    transition: all 0.3s ease;
+  }
+
+  .stepper-input:focus {
+    border-color: rgba(255, 178, 152, 0.4) !important;
+    background-color: rgba(255, 255, 255, 0.04) !important;
+  }
+
+  .stepper-input-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .stepper-textarea {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    padding: 16px 20px !important;
+    border-radius: 14px !important;
+    font-size: 15px !important;
+    outline: none !important;
+    resize: none !important;
+    height: 120px !important;
+    transition: all 0.3s ease;
+  }
+
+  .stepper-textarea:focus {
+    border-color: rgba(255, 178, 152, 0.4) !important;
+    background-color: rgba(255, 255, 255, 0.04) !important;
+  }
+
+  /* Payment Selection (Step 3) */
+  .payment-option-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 18px 24px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .payment-option-card:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .payment-option-card.selected {
+    background-color: rgba(255, 178, 152, 0.04) !important;
+    border-color: #ffb298 !important;
+  }
+
+  .payment-option-radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2.2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .payment-option-card.selected .payment-option-radio {
+    border-color: #ffb298;
+  }
+
+  .payment-option-radio-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ffb298;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+  }
+
+  .payment-option-card.selected .payment-option-radio-dot {
+    transform: scale(1);
+  }
+
