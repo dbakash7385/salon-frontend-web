@@ -1494,7 +1494,7 @@ line-height: 130%; /* 18.2px */
 /* Contact Us Page Styles */
 .contact-hero {
   height: 450px;
-  background-image: url("./assets/images/png/contact-us.png ");
+  background-image: url("./assets/images/png/contact-us.png");
   background-size: cover;
   background-position: center;
 }

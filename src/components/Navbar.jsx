@@ -18,14 +18,14 @@ const Navbar = () => {
       style={{ top: 0, backgroundColor: "#000" }}
     >
       <div className="container py-3 align-items-end">
-        <a className="navbar-brand d-flex align-items-center" href="#">
+        <Link className="navbar-brand d-flex align-items-center" to="/">
           <img
             src={logo}
             alt="STRYN Logo"
             height="40"
             className="d-inline-block align-text-top"
           />
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler"
