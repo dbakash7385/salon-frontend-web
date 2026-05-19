@@ -6,6 +6,7 @@ import ContactUs from './components/ContactUs'
 import AboutUs from './components/AboutUs'
 import CustomerAccount from './pages/customer/Account'
 import ViewServicesDetail from './pages/customer/ViewServicesDetail'
+import Salons from './components/Salons'
 
 // Placeholder for Partner Dashboard
 const PartnerDashboard = () => (
@@ -20,6 +21,8 @@ function App() {
       <Routes>
         {/* Public Landing Page */}
         <Route path="/" element={<LandingPage />} />
+
+        <Route path="/salons" element={<Salons />} />
 
         {/* Contact Us Page */}
         <Route path="/contact-us" element={<ContactUs />} />

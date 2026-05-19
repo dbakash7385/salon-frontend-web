@@ -42,13 +42,12 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className="nav-item px-3">
-              <a
-                className="nav-link nav-link-custom active"
-                aria-current="page"
-                href="#"
-              >
+
+
+              <Link className="nav-link nav-link-custom" to="/salons">
                 Salons
-              </a>
+              </Link>
+
             </li>
             <li className="nav-item px-3">
               <Link className="nav-link nav-link-custom" to="/about-us">
