@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const CustomerLogin = ({ onNavigate }) => {
+const PartnerLogin = ({ onNavigate, onClose }) => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -15,7 +15,7 @@ const CustomerLogin = ({ onNavigate }) => {
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
 
-  // Senior Developer Validation Logic
+  // Validation Logic
   const validateField = (name, value) => {
     let error = "";
     switch (name) {
@@ -70,16 +70,17 @@ const CustomerLogin = ({ onNavigate }) => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      console.log("Senior Developer: Login valid", formData);
-      navigate("/customer/home");
+      console.log("Senior Developer: Partner Login valid", formData);
+      navigate("/partner/dashboard");
     }
   };
+
   return (
-    <div className="customer-login-view">
+    <div className="partner-login-view">
       <div className="text-center mb-4">
-        <h2 className="text-30-500">Welcome Back</h2>
-        <p className="text-16-400 mb-3">Login to book your next appointment</p>
-        <div className="badge-customer">Customer Account</div>
+        <h2 className="text-30-500 text-white">Welcome Back</h2>
+        <p className="text-16-400-inter mb-3 ">Login to manage your business</p>
+        <div className="badge-business">Business Account</div>
       </div>
 
       <form className="auth-form" onSubmit={handleSubmit}>
@@ -151,7 +152,7 @@ const CustomerLogin = ({ onNavigate }) => {
             />
             <button
               type="button"
-              className="input-icon-end text-muted border-0 bg-transparent"
+              className="input-icon-end  border-0 bg-transparent"
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? (
@@ -223,7 +224,7 @@ const CustomerLogin = ({ onNavigate }) => {
           <div className="text-end mt-2">
             <span 
               className="forgot-password-link cursor-pointer"
-              onClick={() => onNavigate("CUSTOMER_FORGOT_PASSWORD")}
+              onClick={() => onNavigate("PARTNER_FORGOT_PASSWORD")}
             >
               Forgot Password?
             </span>
@@ -242,7 +243,10 @@ const CustomerLogin = ({ onNavigate }) => {
           Don't have an account?{" "}
           <span
             className="auth-link cursor-pointer"
-            onClick={() => onNavigate("CUSTOMER_SIGNUP")}
+            onClick={() => {
+              if (onClose) onClose();
+              navigate("/partner-signup");
+            }}
           >
             Sign Up
           </span>
@@ -252,4 +256,4 @@ const CustomerLogin = ({ onNavigate }) => {
   );
 };
 
-export default CustomerLogin;
+export default PartnerLogin;

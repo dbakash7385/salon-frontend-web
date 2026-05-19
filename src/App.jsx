@@ -7,6 +7,7 @@ import AboutUs from './components/AboutUs'
 import CustomerAccount from './pages/customer/Account'
 import ViewServicesDetail from './pages/customer/ViewServicesDetail'
 import Salons from './components/Salons'
+import PartnerSignupPage from './pages/partner/Signup'
 
 // Placeholder for Partner Dashboard
 const PartnerDashboard = () => (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/customer/services-detail" element={<ViewServicesDetail />} />
 
         {/* Partner Routes */}
+        <Route path="/partner-signup" element={<PartnerSignupPage />} />
         <Route path="/partner/dashboard" element={<PartnerDashboard />} />
       </Routes>
     </Router>

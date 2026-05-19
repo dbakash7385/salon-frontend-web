@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import RoleSelection from './RoleSelection';
-import CustomerLogin from './CustomerLogin';
-import CustomerSignup from './CustomerSignup';
-import CustomerForgotPassword from './CustomerForgotPassword';
-import CustomerVerification from './CustomerVerification';
-import CustomerResetPassword from './CustomerResetPassword';
+import CustomerLogin from './customer/CustomerLogin';
+import CustomerSignup from './customer/CustomerSignup';
+import CustomerForgotPassword from './customer/CustomerForgotPassword';
+import CustomerVerification from './customer/CustomerVerification';
+import CustomerResetPassword from './customer/CustomerResetPassword';
+import PartnerLogin from './partner/PartnerLogin';
 
 const AuthModal = ({ isOpen, onClose, initialView = 'ROLE_SELECTION' }) => {
   const [currentView, setCurrentView] = useState(initialView);
@@ -38,8 +39,9 @@ const AuthModal = ({ isOpen, onClose, initialView = 'ROLE_SELECTION' }) => {
       case 'CUSTOMER_RESET_PASSWORD':
         return <CustomerResetPassword onNavigate={setCurrentView} />;
       case 'PARTNER_LOGIN':
-        // Placeholder for future Partner flow
-        return <div className="text-white p-5 text-center">Partner Login Coming Soon</div>;
+        return <PartnerLogin onNavigate={setCurrentView} onClose={onClose} />;
+      case 'PARTNER_FORGOT_PASSWORD':
+        return <div className="text-white p-5 text-center">Partner Reset Password Coming Soon</div>;
       default:
         return <RoleSelection onNavigate={setCurrentView} />;
     }

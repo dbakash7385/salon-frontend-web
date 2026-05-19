@@ -47,13 +47,13 @@ const Footer = () => {
             <h5 className="footer-heading mb-4">About STRYN</h5>
             <ul className="footer-links list-unstyled">
               <li className="mb-3">
-                <a href="#">Services</a>
+                <a href="/salons">Services</a>
               </li>
               <li className="mb-3">
-                <a href="#">About</a>
+                <a href="/about-us">About</a>
               </li>
               <li className="mb-3">
-                <a href="#">Contact Us</a>
+                <a href="/contact-us">Contact Us</a>
               </li>
             </ul>
           </div>
