@@ -71,6 +71,7 @@ const PartnerLogin = ({ onNavigate, onClose }) => {
 
     if (Object.keys(newErrors).length === 0) {
       console.log("Senior Developer: Partner Login valid", formData);
+      if (onClose) onClose();
       navigate("/partner/dashboard");
     }
   };

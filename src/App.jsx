@@ -8,13 +8,7 @@ import CustomerAccount from './pages/customer/Account'
 import ViewServicesDetail from './pages/customer/ViewServicesDetail'
 import Salons from './components/Salons'
 import PartnerSignupPage from './pages/partner/Signup'
-
-// Placeholder for Partner Dashboard
-const PartnerDashboard = () => (
-  <div className="bg-black min-vh-100 d-flex align-items-center justify-content-center text-white">
-    <h1>Partner Dashboard Coming Soon</h1>
-  </div>
-)
+import PartnerDashboard from './pages/partner/Dashboard'
 
 function App() {
   return (

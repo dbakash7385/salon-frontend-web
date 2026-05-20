@@ -1416,8 +1416,11 @@ const PartnerSignup = ({ onNavigate }) => {
           setIsSuccessOpen(false);
           navigate("/partner/dashboard");
         }}
-        title="Payment Successful!"
-        message={`Thank you! Your payment of ${getPlanTotal()}₹ has been processed successfully. Welcome to STRYN.`}
+        title="Vendor Approval"
+        message="Waiting for vendor approval. This can take up to 24 hours"
+        buttonText="Go to Dashboard"
+        showIcon={false}
+        showCloseButton={true}
       />
     </div>
   );
