@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const RecentBookings = () => {
+  const navigate = useNavigate();
   const bookingsData = [
     {
       id: 1,
@@ -38,9 +40,9 @@ const RecentBookings = () => {
         <div className="bookings-title-group">
           <h2 className="bookings-title">Recent Bookings</h2>
         </div>
-        <a href="#all-bookings" className="bookings-view-all">
+        <div onClick={() => navigate("/partner/booking")} className="bookings-view-all">
           View all
-        </a>
+        </div>
       </div>
 
       <ul className="booking-list">

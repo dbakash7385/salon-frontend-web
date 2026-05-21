@@ -3,6 +3,12 @@ import Sidebar from "../../components/partner/Sidebar";
 import Header from "../../components/partner/Header";
 import Footer from "../../components/partner/Footer";
 import DashboardHome from "./DashboardHome";
+import Services from "./Services";
+import Staff from "./Staff";
+import Transactions from "./Transactions";
+import Calendar from "./Calendar";
+import Bookings from "./Bookings";
+import Settings from "./Settings";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("home");
@@ -13,21 +19,17 @@ const Dashboard = () => {
       case "home":
         return <DashboardHome />;
       case "services":
+        return <Services />;
       case "staff":
-      case "calendar":
-      case "bookings":
+        return <Staff />;
       case "transaction":
+        return <Transactions />;
+      case "calendar":
+        return <Calendar />;
+      case "bookings":
+        return <Bookings />;
       case "settings":
-        return (
-          <div className="text-start">
-            <h1 className="text-30-700 mb-2 text-white capitalize">
-              {activeTab}
-            </h1>
-            <p className="text-16-400-inter" style={{ color: "#a1a1a1" }}>
-              Management interface for {activeTab} coming soon.
-            </p>
-          </div>
-        );
+        return <Settings />;
       default:
         return <DashboardHome />;
     }
