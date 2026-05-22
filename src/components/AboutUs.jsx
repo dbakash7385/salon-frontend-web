@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "./Navbar";
+import CustomerNavbar from "./customer/CustomerNavbar";
 import Footer from "./Footer";
 
-const AboutUs = () => {
+const AboutUs = ({ isCustomer }) => {
   return (
     <div className="about-us-page bg-black-dark">
-      <Navbar />
+      {isCustomer ? <CustomerNavbar /> : <Navbar />}
 
       {/* Hero Section */}
       <section className="about-hero position-relative d-flex align-items-center justify-content-center text-center">

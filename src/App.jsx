@@ -29,10 +29,12 @@ function App() {
         <Route path="/customer/home" element={<CustomerHome />} />
         <Route path="/customer/account" element={<CustomerAccount />} />
         <Route path="/customer/services-detail" element={<ViewServicesDetail />} />
+        <Route path="/customer/about" element={<AboutUs isCustomer={true} />} />
+        <Route path="/customer/contact-us" element={<ContactUs isCustomer={true} />} />
 
         {/* Partner Routes */}
         <Route path="/partner-signup" element={<PartnerSignupPage />} />
-        <Route path="/partner/dashboard" element={<PartnerDashboard />} />
+        <Route path="/partner/*" element={<PartnerDashboard />} />
       </Routes>
     </Router>
   )

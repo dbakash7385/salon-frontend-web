@@ -2,7 +2,7 @@ import React from "react";
 import { Search, Bell, Menu } from "lucide-react";
 import avatarImg from "../../assets/images/png/reveue-mens.jpg";
 
-const Header = ({ onMenuClick }) => {
+const Header = ({ onMenuClick, setActiveTab }) => {
   return (
     <header className="partner-header">
       <div className="partner-header-left">
@@ -28,7 +28,11 @@ const Header = ({ onMenuClick }) => {
 
       <div className="partner-header-actions">
         {/* Notification Bell */}
-        <button className="partner-notif-btn" aria-label="Notifications">
+        <button
+          className="partner-notif-btn"
+          aria-label="Notifications"
+          onClick={() => setActiveTab && setActiveTab("notifications")}
+        >
           <Bell size={20} />
         </button>
 

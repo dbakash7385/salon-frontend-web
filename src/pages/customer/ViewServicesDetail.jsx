@@ -13,6 +13,7 @@ import nailsImg from "../../assets/images/png/nail-img.jpg";
 import barberImg from "../../assets/images/png/barber-service.jpg";
 import facialImg from "../../assets/images/png/facial-service.jpg";
 import spaImg from "../../assets/images/png/spa-service.jpg";
+import Navbar from "../../components/Navbar";
 
 const ViewServicesDetail = () => {
   const location = useLocation();

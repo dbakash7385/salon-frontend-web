@@ -40,9 +40,9 @@ const RecentBookings = () => {
         <div className="bookings-title-group">
           <h2 className="bookings-title">Recent Bookings</h2>
         </div>
-        <div onClick={() => navigate("/partner/booking")} className="bookings-view-all">
+        <div onClick={() => navigate("/partner/bookings")} className="bookings-view-all cursor-pointer">
           View all
-        </div>
+        </div>  
       </div>
 
       <ul className="booking-list">

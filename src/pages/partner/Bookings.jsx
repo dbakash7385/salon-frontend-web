@@ -331,7 +331,7 @@ const Bookings = () => {
     <div className="bookings-view text-start">
       {/* Header Info */}
       <div className="calendar-header-row">
-        <h1 className="calendar-title">Bookings</h1>
+        <h1 className="services-header-title">Bookings</h1>
         <p className="calendar-subtitle">Never miss a booking.</p>
       </div>
 

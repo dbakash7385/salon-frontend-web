@@ -28,17 +28,17 @@ const CustomerNavbar = () => {
         <div className="collapse navbar-collapse" id="customerNavbar">
           <ul className="navbar-nav ms-4 mb-2 mb-lg-0">
             <li className="nav-item px-3">
-              <a className="nav-link active text-16-400" href="#">
+              <Link className="nav-link text-16-400" to="/customer/home">
                 Salons
-              </a>
+              </Link>
             </li>
             <li className="nav-item px-3">
-              <Link className="nav-link text-16-400" to="/about-us">
+              <Link className="nav-link text-16-400" to="/customer/about">
                 About
               </Link>
             </li>
             <li className="nav-item px-3">
-              <Link className="nav-link text-16-400" to="/contact-us">
+              <Link className="nav-link text-16-400" to="/customer/contact-us">
                 Contact Us
               </Link>
             </li>

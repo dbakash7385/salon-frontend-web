@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
+import CustomerNavbar from "./customer/CustomerNavbar";
 import Footer from "./Footer";
 import SuccessModal from "./common/SuccessModal";
 
-const ContactUs = () => {
+const ContactUs = ({ isCustomer }) => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = (e) => {
@@ -14,7 +15,7 @@ const ContactUs = () => {
 
   return (
     <div className="contact-us-page bg-black-dark">
-      <Navbar />
+      {isCustomer ? <CustomerNavbar /> : <Navbar />}
 
       {/* Hero Section */}
       <section className="contact-hero position-relative d-flex align-items-center justify-content-center text-center">

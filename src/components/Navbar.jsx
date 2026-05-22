@@ -71,7 +71,7 @@ const Navbar = () => {
             </div>
             <button 
               className="signup-btn"
-              onClick={() => openAuth('ROLE_SELECTION')}
+              onClick={() => openAuth('ROLE_SELECTION_SIGNUP')}
             >
               Sign Up
             </button>

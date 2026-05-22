@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const RoleSelection = ({ onNavigate }) => {
+const RoleSelection = ({ onNavigate, onClose, mode = "LOGIN" }) => {
+  const navigate = useNavigate();
   return (
     <div className="role-selection-view">
       <div className="text-center mb-5">
@@ -58,7 +60,7 @@ const RoleSelection = ({ onNavigate }) => {
             </ul>
             <button
               className="btn-peach w-100"
-              onClick={() => onNavigate("CUSTOMER_LOGIN")}
+              onClick={() => onNavigate(mode === "SIGNUP" ? "CUSTOMER_SIGNUP" : "CUSTOMER_LOGIN")}
             >
               Continue as Customer
             </button>
@@ -138,7 +140,14 @@ const RoleSelection = ({ onNavigate }) => {
             </ul>
             <button
               className="btn-peach w-100"
-              onClick={() => onNavigate("PARTNER_LOGIN")}
+              onClick={() => {
+                if (mode === "SIGNUP") {
+                  if (onClose) onClose();
+                  navigate("/partner-signup");
+                } else {
+                  onNavigate("PARTNER_LOGIN");
+                }
+              }}
             >
               Continue as Partner
             </button>
